@@ -125,19 +125,6 @@ fn main() -> ExitCode {
             };
 
             tm.sequence.push_str(seq);
-            /*
-
-            if *device == 1 {
-                tm.sequence.push_str(DOORBELL_RING[0]);
-            } else if *device == 2 {
-                tm.sequence.push_str(DOORBELL_RING[1]);
-            } else if *device == 3 {
-                tm.sequence.push_str(DOORBELL_RING[2]);
-            } else {
-                eprintln!("\x1b[0;7mdevice id not defined\x1b[0m");
-                return ExitCode::FAILURE;
-            }*/
-        
         },
         
         Commands::Cus {s, pl, rp} => {
