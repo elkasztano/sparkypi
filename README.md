@@ -37,14 +37,20 @@ Compiling is preferably done on the Raspberry Pi itself. It should not take too 
 ## usage
 ### examples:
 
-turn on socket A:
+turn on socket A
 
 `sparkypi socket -d a -s on`
 
-turn off socket B:
+turn off socket B
 
 `sparkypi socket -d b -s off`
 
 trigger doorbell 1
 
 `sparkypi bell 1`
+
+send custom binary sequence '000000010101000101011001' with a pulse length of 170 microseconds 5 times  
+the 's' at the beginning of the string stands for the required sync bit at the beginning of each transmission  
+finding the right pulse length usually requires some trial and error  
+
+`sparkypi cus -s s000000010101000101011001 -p 170 -r 5`
