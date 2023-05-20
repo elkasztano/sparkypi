@@ -16,7 +16,7 @@ Other protocols may be implemented in the future.
 Connect the pins of the transmitter module to the corresponding pins on the Raspberry Pi.
 * VCC ⟶ 5V pin
 * GND ⟶ GND pin
-* data ⟶ GPIO12 on the Raspberry Pi by default, may be changed in 'constants.rs'
+* data ⟶ GPIO17 on the Raspberry Pi by default, may be changed in 'constants.rs'
 
 ### target devices
 Be sure to check the dip switches on the remote controlled mains socket. (see 'constants.rs')
