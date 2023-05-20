@@ -1,7 +1,6 @@
 use rppal::gpio::Gpio;
 use clap::{Parser, Subcommand, ValueEnum};
 use std::process::ExitCode;
-use sparkypi::send_sequence;
 use sparkypi::constants::*;
 use sparkypi::Transmission;
 
@@ -39,12 +38,12 @@ enum Commands {
         /// sequence
         #[arg(short, long = "sequence", value_name = "STRING")]
         s: String,
-        /// pulse_length of the signal
-        #[arg(short, long = "pulse-length", value_name = "µSECS")]
-        pl: u64,
+        /// pulse length of the signal (µsecs)
+        #[arg(short, long = "pulse-length", value_name = "U16")]
+        pl: u16,
         /// number of repeats
-        #[arg(short, long = "repeats", value_name = "REPEATS")]
-        rp: usize,
+        #[arg(short, long = "repeats", value_name = "U8")]
+        rp: u8,
     },
 }
 
@@ -135,7 +134,7 @@ fn main() -> ExitCode {
     
     }
 
-    send_sequence(&mut rc, tm);
+    tm.send_to(&mut rc);
 
     ExitCode::SUCCESS
 }

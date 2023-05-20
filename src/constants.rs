@@ -1,5 +1,5 @@
 // GPIO-Pin the 433 Mhz TX module is connected to
-pub const RC_PIN: u8 = 12;
+pub const RC_PIN: u8 = 17;
 
 // binary sequence for 'Brennenstuhl RCS 1000SN' 433 Mhz remote switch
 // it is actually 'TriState', thats why only the following bit pairs will occur:
@@ -39,11 +39,12 @@ pub const DOORBELL_RING: [ &str; 3 ] = [
 // finding the right pulse length usually requires a lot of fine tuning and may be a bit tricky
 // the right pulse length for the Brennenstuhl RCS 1000SN seems to be 320 microseconds, and 190
 // microseconds for the Physen doorbells respectively
-pub const RC_PL: u64 = 320;
-pub const DB_PL: u64 = 190;
+pub const RC_PL: u16 = 310;
+pub const DB_PL: u16 = 179;
 
 // the number of repeats should be as low as reasonably achievable
 // if it is too long other 433 Mhz devices like weather stations or even tire pressure control
 // systems may get blocked
-pub const RC_RP: usize = 10;
-pub const DB_RP: usize = 5;
+pub const RC_RP: u8 = 10;
+pub const DB_RP: u8 = 5;
+
