@@ -25,6 +25,7 @@ impl ProtocolProperties {
     }
 }
 
+// 'protocol1' - tested
 pub const P1: ProtocolProperties = ProtocolProperties {
     short: 1,
     long: 3,
@@ -32,6 +33,7 @@ pub const P1: ProtocolProperties = ProtocolProperties {
     sync_gap: 31,
 };
 
+// 'protocol2' - untested
 pub const P2: ProtocolProperties = ProtocolProperties {
     short: 1,
     long: 2,
@@ -39,6 +41,7 @@ pub const P2: ProtocolProperties = ProtocolProperties {
     sync_gap: 10,
 };
 
+// slightly different to 'protocol2' - tested
 pub const XEN: ProtocolProperties = ProtocolProperties {
     short: 1,
     long: 2,
@@ -78,8 +81,6 @@ impl Transmission {
 // send one single bit
 // long pulse and short pause results in a binary one
 // short pulse and long pause results in a binary zero
-// the relation between short and long period is 1:3
-// this must possibly be adapted according to the used protocol
 fn send_bit(rc: &mut OutputPin, bit: bool, pulse_length: u16, factor1: u8, factor2: u8) {
     if bit {
         rc.set_high();
@@ -95,7 +96,6 @@ fn send_bit(rc: &mut OutputPin, bit: bool, pulse_length: u16, factor1: u8, facto
 }
 
 // a so called sync bit must be transmitted before the actual data
-// the sync bit consists of one short pulse and a following pause that is 31 times as long
 fn send_sync_bit(rc: &mut OutputPin, pulse_length: u16, factor1: u8, factor2: u8) {
     rc.set_high();
     thread::sleep(time::Duration::from_micros(pulse_length as u64 * factor2 as u64));
