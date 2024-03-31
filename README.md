@@ -6,7 +6,7 @@ control 433 Mhz devices via the command line
 
 You'll need
 
-* a Raspberry Pi 4B (other models haven't been tested yet)
+* a Raspberry Pi 4B or 5 (other models haven't been tested yet)
 * a 433 Mhz transmitter module, like the FS1000A
 
 Tested with the following target devices:
