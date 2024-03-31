@@ -38,15 +38,15 @@ The 'Gmornxen' remote controlled socket switches need to be programmed as well.
 
 ## required operating system
 
-sparkypi has currently been tested on
+sparkypi has been tested on
 
 * Raspberry Pi OS 64 bit
 
-* * Debian GNU/Linux 11 (bullseye)
-* * Kernel: Linux 6.1.21-v8+
+  * Debian GNU/Linux 12 (bookworm)
+  * Kernel: Linux 6.6.20+rpt-rpi-2712
 
 * Ubuntu 23.04
-* * Kernel: Linux 6.2.0-1004-raspi
+  * Kernel: Linux 6.2.0-1004-raspi
 
 ## compiling
 
